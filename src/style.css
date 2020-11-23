@@ -1,0 +1,181 @@
+/*Main colors*/
+:root {
+    --default-color: black;
+    --second-color: white;
+    --third-color: #25c;
+    --dark-background: #111;
+}
+/*Custom local font*/
+@font-face{
+    font-family: "Monserrat";
+    src: url("assets/fonts/Montserrat-Regular.ttf");
+}
+/*Removes annoying decoration from mobile devices*/
+a { 
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+/*Helps centering the panel*/
+body{
+     /*margin: 0; Ensures page doesn't "overlap" down. So, no scrollable*/
+    transition: all .1s ease-in-out;
+    font-family: Monserrat;
+    background-color: black;
+    background: #000 url('assets/images/backgrounds/background4.jpg') center center fixed;
+    background-size: cover;
+    user-select: none;
+}
+/*Removes scrollbar*/
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/*Make it non draggable*/
+img, a {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.windowGUI::-webkit-scrollbar {
+  display: none;
+}
+.drag-area{
+  z-index: 3;
+  padding: 2px;
+  padding-top: 8px;
+  border-radius: .5rem;
+  background-color: rgba(255,255,255, 0);
+  color:black;
+  pointer-events: none;
+  cursor: default !important;
+}
+
+.closeButton {
+  margin: 4px;
+  margin-left: 8px;
+  position: sticky;
+  width: 16px;
+  height: 16px;
+  background-color: #2bf;
+  box-shadow: 0px 0px 2px rgba(25,200,255,1);
+  border-radius: 2rem;
+}
+.closeButton:hover {
+  background-color: #f48;
+  box-shadow: 0px 0px 4px rgba(255,50,100,1);
+}
+.windowGUI{
+  width: 320px;
+  height: 340px;
+  min-width: 200px;
+  min-height: 64px;
+  text-align:center;
+  font-size: 2em;
+  text-align: center;
+  font-weight: normal !important;
+  overflow: scroll;
+  background-color: white;
+  position:fixed;
+  border: 1px solid transparent;
+  border-radius: 1.2rem;
+  color: black;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
+  z-index: 0;
+}
+@media (pointer:coarse), (hover:on-demand) {
+  /* custom css for window animations on "touch targets" */
+  .windowGUI{
+    transition: all .15s ease-out;
+  }
+  body{
+    /*margin: 0; Ensures page doesn't "overlap" down. So, no scrollable*/
+    background: #000 url('assets/images/backgrounds/background5.jpg') center center fixed;
+    background-size: cover;
+  }
+  .dock {
+    left: 50%;
+    bottom: 8px;
+    position: fixed;
+    z-index: 0;
+    width: 378px;
+    height: 96px;
+    text-align: center;
+    font-size: .65rem;
+    backdrop-filter: blur(3rem);
+    border-radius: 1.70rem;
+    transform: translate(-50%, 100%);
+    opacity: 0;
+  }
+  .dock img {
+    padding: 0px;
+    margin: 0px;
+    width: 61px;
+    height: auto;
+    border-width: 0px;
+    border-radius: 16px;
+    background-color: white;
+  }
+  .dock ul {
+	  position: relative;
+	  display: inline-block;
+	  top: 5px;
+	  padding: 12px 0px;
+	  margin: 0;
+  }
+  .dock li {
+    display: inline-block;
+    position: relative;
+    margin: 0px 14px;
+    margin-bottom: 12px;
+    vertical-align: baseline;
+  }
+  .dock li:target a {
+    animation:  1 alternate ease-out;
+  }
+}
+
+#DRSghost {
+  z-index: 11;
+  border-radius: .33rem;
+  background: rgba(63, 148, 223, 1) !important;
+	position: fixed;
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+	-ms-transition: all 0.1s ease-in-out;
+	-o-transition: all 0.1s ease-in-out;
+	transition: all 0.1s ease-in-out;
+  pointer-events: none;
+}
+.blurOver {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: rgba(255, 255, 255, 1.0);
+    background-color: rgba(0, 0, 0, 1.0);
+    backdrop-filter: blur(0);
+    z-index:3;
+	  animation-name: fadeOut;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+	  animation-duration: 1.25s;
+	  animation-timing-function: ease;
+    animation-delay: 2s;
+}
+
+@keyframes fadeOut {
+	0% {
+        backdrop-filter: blur(0rem);
+        color: rgba(255, 255, 255, 1);
+        background-color: rgba(0, 0, 0, 1.0);
+  } 25% { 
+        backdrop-filter: blur(6rem);
+        color: rgba(255, 255, 255, 0);
+        background-color: rgba(0, 0, 0, 1.0);
+  } 100% {
+        backdrop-filter: blur(0);
+        background-color: rgba(255, 255, 255, 0);
+        color: rgba(255, 255, 255, 0);
+	}
+}

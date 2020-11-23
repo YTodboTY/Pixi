@@ -1,0 +1,163 @@
+/* @group Animation */
+/* Defines the bounce animation. Note that only the up motion is defined as
+   the down motion is created automatically using
+   `animation-direction: alternate;`. */
+@-webkit-keyframes bounce {
+	  0% { -webkit-transform: translateY(0); }
+	100% { -webkit-transform: translateY(-10px); }
+}
+
+@-moz-keyframes bounce {
+	  0% { -moz-transform: translateY(0); }
+	100% { -moz-transform: translateY(-10px); }
+}
+/* @end */
+
+@-webkit-keyframes fadeOutOpacity {
+	0% {
+    opacity: 0;
+  }  100% {
+	opacity: 1;
+	transform: translate(-50%, 0%);
+	}
+}
+
+/* @group Dock */
+.dock {
+	left: 50%;
+	bottom: 5px;
+	position: fixed;
+	z-index: 1 !important;
+	width: 280px;
+	height: 72px;
+	text-align: center;
+	font-size: .65rem;
+	backdrop-filter: blur(1rem);
+	border-radius: 3rem;
+	background-color: rgba(0,0,0,.08);
+	transform: translate(-50%, 100%);
+	opacity: 0;
+	-webkit-animation-name: fadeOutOpacity;
+    -webkit-animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: .5s;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-delay: 3.3s;
+}
+
+.dock ul {
+	position: relative;
+	display: inline-block;
+	top: 0px;
+	padding: 11px 0px;
+	margin: 0;
+}
+
+/* @end */
+
+/* @group Items */
+/* Defines a dock item. */
+.dock li {
+	display: inline-block;
+	position: relative;
+	margin: 0px 9px;
+	margin-bottom: 12px;
+	vertical-align: baseline;
+}
+
+.dock a {
+	display: inline-block;
+	cursor: default;
+	outline: none;
+}
+/* Applies the bounce animation to the targeted dock item.  */
+.dock li:target a {
+	-webkit-animation: bounce .15s 6 alternate ease-out;
+	-moz-animation: bounce .15s 6 alternate ease-out;
+}
+
+/* Displays the status indicator of the targeted dock item. */
+.dock li:target:after {
+	visibility: visible;
+	opacity: 1;
+}
+/* @end */
+
+/* @group Label */
+/* This is just a wrapper in order to center the actual label horizontally.
+   You may need to adjust the width negative margin if you have really long
+   labels. */
+.dock em {
+	opacity: 0;
+	position: absolute;
+	top: -34px;
+	left: 50%;
+	width: 150px;
+	margin-left: -75px;
+	text-align: center;
+	transition: all .2s;
+	z-index: 2;
+}
+
+/* Generates the little arrow at the bottom of the label. */
+.dock em:after {
+	content: " ";
+	position: absolute;
+	bottom: -6px;
+	left: 50%;
+	margin-left: -6px;
+	width: 0;
+	height: 0;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid rgba(0, 0, 0, 1);
+	border-bottom: none;
+	z-index: 2;
+}
+
+/* This is the actual label. */
+.dock em span {
+	display: inline-block;
+	padding: 5px 12px;
+	font-size: .9rem;
+	font-style: normal;
+	color: #FFF;
+	background: rgba(0, 0, 0, 1);
+	border-radius: 12px;
+	z-index: 2;
+}
+@media(hover: hover) {
+	.dock li:hover em, .dock li a:focus em {
+		opacity: 1;
+		transition: all .2s;
+	}
+}
+/* @end */
+
+/* @group Icon */
+/* Sets the icons to a smaller width so they can be enlarged and applies
+   transitions for a smooth animation. Make sure to adjust the width so it
+   matches your images. */
+.dock img {
+	padding: 0px;
+	margin: 0px;
+	width: 48px;
+	height: auto;
+	border-width: 0px;
+	border-radius: 26px;
+	object-fit: fill;
+	background-color: white;
+	box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+	-webkit-transition: width .1s, height .1s;
+	-moz-transition: width .1s, height .1s;
+	-o-transition: width .1s, height .1s;
+}
+
+.dock li:hover img, .dock li a:focus img {
+	transition: all .1s;
+}
+
+.dock li:active img {
+	opacity: .75;
+}
+/* @end */

@@ -1,0 +1,49 @@
+<!doctype html>                                                                                          <!--Responsive component based app with dark mode support-->
+<html>
+    <head>
+        <title>Pixi OS</title>
+        <link rel="stylesheet" href="./dock.css" />                                                            <!--Sets a title-->
+        <link rel="stylesheet" type="text/css" href="style.css">                                         <!--Loads main stylesheet-->
+        <meta name="viewport" content="width=device-width, user-scalable=no" />                          <!--Eliminates zoom, useful on mobile devices-->
+    </head>
+    <body onload ="main()">
+      <!--Logo presentation-->
+    <div class ="blurOver" style="text-align:center;font-size:64px;pointer-events:none;"><br><br><br> <p id ="logo">p  i  x  i</p> </div>
+    <!-- Begin: CSS Dock Code -->
+    <div class="dock">
+      <ul class="docklist">
+        <li id="apps">
+          <a href="#apps" onclick="launchApp('generic')">
+            <em><span>Apps</span></em>
+            <img src="./assets/images/icons/apps.svg" alt="Apps" draggable="false"/>
+          </a>
+        </li>
+        <li id="terminal" onclick="launchApp('terminal')">
+          <a href="#terminal">
+            <em><span>Terminal</span></em>
+            <img src="./assets/images/icons/terminal.svg" alt="Terminal" draggable="false" />
+          </a>
+        </li>
+        <li id="text" onclick="launchApp('texteditor')">
+          <a href="#text">
+            <em><span>Text</span></em>
+            <img src="./assets/images/icons/text editor.svg" alt="Text editor" draggable="false" />
+          </a>
+        </li>
+        <li id="files" onclick="launchApp('files')">
+          <a href="#files">
+            <em><span>Files</span></em>
+            <img src="./assets/images/icons/files.svg" alt="Files" draggable="false"/>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- End: CSS Dock Code -->
+        <script defer type="text/javascript" src="./fs/jsfs.min.js"></script>
+        <script defer src="./core/terminal.js"></script>
+        <script defer src="./core/utils.js"></script>
+        <script defer src="./core/wm.js"></script>
+        <script defer src="./core/app.js"></script>
+        <script defer src="main.js"></script>                                                             <!--Loads main app code-->
+    </body>
+</html>                                                                                                  <!--Made by Nohak Coffee-->

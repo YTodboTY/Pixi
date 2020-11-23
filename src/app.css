@@ -1,0 +1,37 @@
+/*Main colors*/
+:root {
+    --default-color: black;
+    --second-color: white;
+    --third-color: #25c;
+    --dark-background: #111;
+}
+/*Custom local font*/
+@font-face{
+    font-family: "Monserrat";
+    src: url("assets/fonts/Montserrat-Regular.ttf");
+}
+/*Removes annoying decoration from mobile devices*/
+a { 
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+/*Helps centering the panel*/
+body{
+     /*margin: 0; Ensures page doesn't "overlap" down. So, no scrollable*/
+    font-family: Monserrat;
+    user-select: none;
+}
+/*Removes scrollbar*/
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/*Make it non draggable*/
+img, a {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.windowGUI::-webkit-scrollbar {
+  display: none;
+}
