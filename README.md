@@ -18,8 +18,8 @@ Pixi is a Web Desktop Environment made with plain HTML/CSS & JS. It works offlin
 
 # Screenshots
 
-![image](https://ibb.co/z5BnFWp)
+![image](https://i.ibb.co/K29gth7/s2.png)
 
-![image](https://ibb.co/v1nd52P)
+![image](https://i.ibb.co/RSsvNGf/s3.png)
 
-![image](https://ibb.co/3p0bxdW)
+![image](https://i.ibb.co/zPqZzw7/Screenshot-2020-11-23-17-28-11-794-com-nohak-apps.jpg)
