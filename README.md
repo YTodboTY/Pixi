@@ -2,7 +2,7 @@
 A Web Desktop Environment
 
 <p align="center">
-  <a href="#"><img src="https://ibb.co/4dY9czD" width="256"></a>
+  <a href="#"><img src="https://i.ibb.co/9tVzJ6f/s1.png" width="256"></a>
 </p>
 
 <div align="center">
