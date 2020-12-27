@@ -1,4 +1,4 @@
-#Warning: Pixi is no longer maintained
+# Warning: Pixi is no longer maintained
 
 <p align="center">
   <a href="#"><img src="https://i.ibb.co/9tVzJ6f/s1.png" width="512"></a>
