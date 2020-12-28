@@ -1,4 +1,4 @@
-# Warning: Pixi is no longer maintained, was made as an experimental project
+# Warning: Pixi is no longer maintained, was made as an experimental project. Im working into improving spagetthi code and all the messed up globals, but note that this is not a long-supported project just yet.
 
 <p align="center">
   <a href="#"><img src="https://i.ibb.co/9tVzJ6f/s1.png" width="512"></a>
