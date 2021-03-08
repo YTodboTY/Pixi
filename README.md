@@ -1,5 +1,7 @@
 # Warning: Pixi is no longer maintained, was made as an experimental project. Im working into improving spagetthi code and all the messed up globals, but note that this is not a long-supported project just yet.
 
+# Edit: Im changing all the architecture so it works good on any device. Being on college while doing this it's hard though.
+
 <p align="center">
   <a href="#"><img src="https://i.ibb.co/9tVzJ6f/s1.png" width="512"></a>
 </p>
